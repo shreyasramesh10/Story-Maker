@@ -1,0 +1,74 @@
+﻿@model IEnumerable<IPFinalPrj.Models.StoryBlock>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.collage.CollageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StoryBlockSeq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Caption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImgName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.collage.CollageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoryBlockSeq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Caption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImgName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>*@
+        <td>
+            <img src="@Url.Content("~/UploadedFiles/" + item.ImgName)" height="75" width="75"/>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StoryBlockID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StoryBlockID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StoryBlockID })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="container body-content">
+    <hr>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -Story Maker</p>
+        <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+    </footer>
+</div>

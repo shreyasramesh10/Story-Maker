@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Images>
+ <Image>
+    <Path>/Content/images/apple_desktop.JPG</Path>
+    <Tag>My new Mac</Tag>   
+ </Image>
+  <Image>
+     <Path>/Content/images/beam.jpg</Path>
+     <Tag>Awesome View</Tag>   
+ </Image>
+  <Image>
+     <Path>/Content/images/nyc.jpg</Path>
+     <Tag>My first travel sites</Tag>   
+ </Image>
+  <Image>
+     <Path>/Content/images/clock.jpg</Path>
+     <Tag>My gift to my mom</Tag>   
+ </Image>
+ </Images>

@@ -1,0 +1,87 @@
+﻿@{
+        ViewBag.Title = "Home Page";
+ }
+
+<div class="lead1">
+    <h1>Story Maker</h1>
+    <p >Welcome to Story Maker, a place where memories are treasured for life.</p>
+
+    @*<p style="font-size:18px">Story Maker is a great site to build your stories to let the world know.</p>*@
+    <a href="/Account/Login" class="btn btn-primary btn-lg">So Get Going &raquo;</a>
+</div>
+
+@using System
+@using System.Linq
+@using System.Xml.Linq
+
+<div class="row">
+    <div class="col-md-5" style=" float: left; height: 400px; width:600px; margin: 12px; border-radius: 25px; padding: 1px; text-align: center; ">
+        @{
+
+            string filepath = HttpContext.Current.Server.MapPath("~/Content/images/imagesUpState.xml");
+
+            XElement xelement = XElement.Load(filepath);
+            IEnumerable<XElement> images = xelement.Elements();
+            //Read the entire XML
+            int i = 0;
+            string[] image = new String[images.Count()];
+            string[] caption = new String[images.Count()];
+            foreach (var imageXML in images)
+            {
+                image[i] = imageXML.Element("Path").Value;
+                caption[i] = imageXML.Element("Tag").Value;
+                i++;
+            }
+
+            Random r = new Random();
+            int imageNumber = r.Next(image.Length);//Max range
+        }
+
+        <div>
+            <figure>
+                <img src=@image[@imageNumber] style="font-weight: bold;margin:5px" height='400' width="550" border=0 />
+                <figcaption style="font-weight: bold; font-family: Helvetica Neue,Helvetica,Arial,sans-serif;">@caption[@imageNumber]</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="col-md-5" style="float: right; height: 400px; margin: 12px; border-radius: 25px; padding: 1px; text-align: center; ">
+
+        @*<p style="font-weight: bold; font-size: 18px; margin: 5px; font-family: Helvetica Neue,Helvetica,Arial,sans-serif; ">Story of my life</p>*@
+
+        @{
+            string filepathSU = HttpContext.Current.Server.MapPath("~/Content/images/images.xml");
+
+            XElement xelementSU = XElement.Load(filepathSU);
+            IEnumerable<XElement> imagesSU = xelementSU.Elements();
+            string[] image_su = new string[imagesSU.Count()];
+            string[] caption_su = new string[imagesSU.Count()];
+
+            int j = 0;
+            foreach (var imageXMLSU in imagesSU)
+            {
+                image_su[j] = imageXMLSU.Element("Path").Value;
+                caption_su[j] = imageXMLSU.Element("Tag").Value;
+                j++;
+            }
+
+            Random r_su = new Random();
+            int imageNumber_su = r_su.Next(image_su.Length);
+        }
+
+        <div>
+            <figure>
+                <img src=@image_su[@imageNumber_su] style="font-weight: bold;margin:5px" height='400' width="500" border=0 />
+                <figcaption style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif; font-weight: bold; margin-top: 2px">@caption_su[@imageNumber_su]</figcaption>
+            </figure>
+        </div>
+    </div>
+    </div>
+<div class="container body-content">
+    <hr>
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Story Maker</p>
+            <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+        </footer>
+</div>

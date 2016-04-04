@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Images>
+ <Image>
+    <Path>/Content/images/Hall_of_Languages.JPG</Path>
+    <Tag>My university- Syracuse University</Tag>   
+ </Image>
+  <Image>
+     <Path>/Content/images/quad_center.jpg</Path>
+     <Tag>The Quad Center - The central location of the university, A place to just sit and relax</Tag>   
+ </Image>
+  <Image>
+     <Path>/Content/images/bird_library.jpg</Path>
+     <Tag>The Bird Library - Where I do my assignments</Tag>   
+ </Image>
+ </Images>

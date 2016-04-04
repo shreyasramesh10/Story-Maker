@@ -1,0 +1,72 @@
+﻿@model IPFinalPrj.Models.StoryBlock
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StoryBlock</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.collage.CollageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.collage.CollageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoryBlockSeq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoryBlockSeq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgName)
+        </dd>
+        <hr>
+            <dd><img src="@Url.Content("~/UploadedFiles/" + Model.ImgName)" height="150" width="150" /></dd>
+            <dd><p>Caption: </p></dd>
+            <dd>@Html.DisplayFor(model => Model.Caption)</dd>
+            <dd><p>Description: </p></dd>
+            <dd>@Html.DisplayFor(model => Model.Description)</dd>
+           
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StoryBlockID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div class="container body-content">
+    <hr>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -Story Maker</p>
+        <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+    </footer>
+</div>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Help Page";
+}
+
+<h2>Help Page</h2>
+<p><b><i>Welcome to Story Maker, a place to create your stories. This page will help you get a 
+    head start and help you in creating colorful stories.</i></b></p>
+ <p>Story Maker is a website that supports creating stories where a story is a sequence of
+story blocks laid out in slideshow fashion.  A story block is a structure that contains an image or drawing, a caption,
+and text description.</p>
+<p>After logging in, you will see the options that our website has to offer- Create story blocks, make a collage out
+    of those story blocks and then display the collage in a slideshow manner.</p>
+<p>Story Blocks tab takes you to the page which gives you the options to create a story block consisting of images, 
+    caption and description. </p>
+<p>You can then create a collage, which consists of story blocks. </p>
+<p>This collage can be shown as a slideshow on click of the slideshow button.</p>
+
+
+
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    //<input type="submit" value="Get started" />
+    <a href="/Home/Index" >Get Started</a>
+}
+
+<div class="container body-content">
+    <hr>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -Story Maker</p>
+        <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+    </footer>
+</div>

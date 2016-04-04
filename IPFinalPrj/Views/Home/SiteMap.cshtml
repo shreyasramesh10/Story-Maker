@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "SiteMap";
+}
+
+<h2>SiteMap</h2>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <a href="/Home/Index" >Home Page</a>
+}
+
+<p>Get back to the home page</p>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <a href="/StoryBlocks/Index">Create Story Blocks</a>
+}
+<p>Create a Story Block</p>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <a href="/Collages/Index">Create Collages</a>
+}
+<p>Create a Collage from the story blocks</p>
+
+@using (Html.BeginForm("Index", "Home"))
+{
+    <a href="/Home/Contact">Contact Us</a>
+}
+<p>Feel free to contact us</p>
+
+
+<div class="container body-content">
+    <hr>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -Story Maker</p>
+        <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+    </footer>
+</div>

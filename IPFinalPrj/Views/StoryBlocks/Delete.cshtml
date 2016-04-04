@@ -1,0 +1,82 @@
+﻿@model IPFinalPrj.Models.StoryBlock
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StoryBlock</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.collage.CollageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.collage.CollageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoryBlockSeq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoryBlockSeq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgName)
+        </dd>
+
+      
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>*@
+
+      
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+<div class="container body-content">
+    <hr>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -Story Maker</p>
+        <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+    </footer>
+</div>

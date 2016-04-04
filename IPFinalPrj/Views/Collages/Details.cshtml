@@ -1,0 +1,61 @@
+﻿@model IPFinalPrj.Models.Collage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Collage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CollageSeq)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollageSeq)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CollageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CollageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        @foreach (var item in Model.storyblock)
+        {
+            <dd><img src="@Url.Content("~/UploadedFiles/" + item.ImgName)" height="150" width="150" /></dd>
+            <dd><p>Caption: </p></dd>
+            <dd>@Html.DisplayFor(model=>item.Caption)</dd>
+            <dd><p>Description: </p></dd>
+            <dd>@Html.DisplayFor(model => item.Description)</dd>
+            <hr>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CollageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<div class="container body-content">
+    <hr>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -Story Maker</p>
+        <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+    </footer>
+</div>

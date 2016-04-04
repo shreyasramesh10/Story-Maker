@@ -1,0 +1,61 @@
+﻿@model IEnumerable<IPFinalPrj.Models.Collage>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CollageSeq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CollageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>*@
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollageSeq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CollageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CollageID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CollageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CollageID }) |
+            @Html.ActionLink("Slide Show", "SlideShowGen", new { id = item.CollageID })
+        </td>
+    </tr>
+}
+
+</table>
+<div class="container body-content">
+    <hr>
+    <footer>
+        <p>&copy; @DateTime.Now.Year -Story Maker</p>
+        <p>Copyrights of any third party material or images used on this site belong to their respective owners. I do not reserve any rights for them.</p>
+
+    </footer>
+</div>
